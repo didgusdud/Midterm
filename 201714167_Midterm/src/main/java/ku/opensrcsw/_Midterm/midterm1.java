@@ -19,6 +19,8 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.*;
 import org.json.simple.parser.*;
 
+import midterm.problem2.RegularExpression;
+
 public class midterm1 {
 
 	public static void main(String[] args) {
@@ -26,6 +28,21 @@ public class midterm1 {
 		System.out.print("Enter the keyword you are looking for: ");
     	String input = in.next();
     	
+    	boolean done = false;
+		while(!done)
+		{
+			int next = in.read();
+			if(next == -1) done =true;
+			else
+			{
+				char b = (char) next;
+				if(b!=' ')
+					count1++;
+				else count2++;
+				if(b=='.'||b=='!'||b=='?') count3++;
+				
+			}
+		}
 		JSONParser jsonParser = new JSONParser();
 		 try(Reader reader= new FileReader("c:\\midterm\\midterm.json")){
          	 
@@ -41,6 +58,15 @@ public class midterm1 {
             		 e.printStackTrace();
             	 }
              }
+             
+             RegularExpression re = new RegularExpression();
+             String sentence = input1;
+             String pattern = input2;
+            
+             if (re.check(sentence, pattern)){
+                System.out.println("인사말이 포함되어 있습니다.");
+             } else
+                System.out.println("인사말이 포함되어 있지 않습니다.");
              
              for(int i=0; i<infoArray.size();i++){
             	 

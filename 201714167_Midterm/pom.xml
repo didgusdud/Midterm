@@ -23,6 +23,13 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+   <groupId>midterm</groupId>
+   <artifactId>problem2</artifactId>
+   <version>0.0.1-SNAPSHOT</version>
+   <scope>system</scope> 
+   <systemPath>${basedir}/MidTermJar/problem2-0.0.1-SNAPSHOT.jar</systemPath>
+ </dependency>
   </dependencies>
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven --></pluginManagement>
